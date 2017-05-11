@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Ionic Blank
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+			<!-- <ion-icon item-left>
+			</ion-icon> -->
+	<ion-list>
+		<ion-item *ngFor="let file of files">
+			<ion-icon name="document" item-left *ngIf="file.isFile"></ion-icon>
+			<ion-icon name="folder" item-left *ngIf="file.isDirectory"></ion-icon>
+			<div *ngIf="!file?.backOption" (click)="getFolderList(file.name)">{{file.name}}</div>
+			<div *ngIf="file?.backOption" (click)="getBackToParent(file.name)">[ Back ]</div>
+		</ion-item>
+	</ion-list>
+		<!-- <button ion-item>
+			<ion-icon name="document" item-left></ion-icon>
+			<div>Item 1</div>
+		</button>
+		<button ion-item>
+			<ion-icon name="folder" item-left></ion-icon>
+			<span>Item 2</span>
+		</button> -->
+	<!-- <ion-list>
+		<button ion-item *ngFor="let file of files">
+			<ion-icon name="document" item-left *ngIf="file.isFile"></ion-icon>
+			<ion-icon name="folder" item-left *ngIf="file.isDirectory"></ion-icon>
+			<div *ngIf="!file?.backOption" (click)="getFolderList(file.name)">{{file.name}}</div>
+			<div *ngIf="file?.backOption" (click)="getBackToParent(file.name)">(back)</div>
+		</button>
+	</ion-list> -->
+
+</ion-content>
